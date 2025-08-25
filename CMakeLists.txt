@@ -65,8 +65,8 @@ set (PROJECT_DEFINES
 
 set (PROJECT_INCLUDES
 	# LIST INCLUDE DIRECTORIES HERE
-    Drivers/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include
-    Drivers/STM32CubeG4/Drivers/CMSIS/Include
+    deps/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include
+    deps/STM32CubeG4/Drivers/CMSIS/Include
 	inc/
     )
 
