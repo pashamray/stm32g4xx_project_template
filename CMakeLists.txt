@@ -49,6 +49,8 @@ set (RUNTIME_LIBRARY_SYSCALLS "--specs=nosys.specs")
 set (PROJECT_SOURCES
 	# LIST SOURCE FILES HERE
 	startup_stm32g474retx.s
+	src/rcc.c
+	src/gpio.c
 	src/main.c
 	src/syscalls.c
 	src/sysmem.c
