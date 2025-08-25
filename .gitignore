@@ -1,4 +1,5 @@
 .settings
 /Release
 /Debug
+/build
 *.launch

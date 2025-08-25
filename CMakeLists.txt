@@ -4,10 +4,10 @@
 #
 # usage: Edit "VARIABLES"-section to suit project requirements.
 #        For debug build:
-#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Debug -GNinja -DCMAKE_BUILD_TYPE=Debug
+#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B build/Debug -GNinja -DCMAKE_BUILD_TYPE=Debug
 #          make -C Debug VERBOSE=1 -j
 #        For release build:
-#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Release -GNinja -DCMAKE_BUILD_TYPE=Release
+#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B build/Release -GNinja -DCMAKE_BUILD_TYPE=Release
 #          make -C Release VERBOSE=1 -j
 #############################################################################################################################
 cmake_minimum_required(VERSION 3.20)
@@ -38,7 +38,7 @@ set (MFLOAT_ABI_MIX                   "-mfloat-abi=softfp")
 ###################### VARIABLES ######################################
 set (PROJECT_NAME             "stm32g4xx_project_template")
 set (PROJECT_TYPE             "exe")
-set (LINKER_SCRIPT            "../STM32G474RETX_FLASH.ld")
+set (LINKER_SCRIPT            "../../STM32G474RETX_FLASH.ld")
 set (MCPU                     "-mcpu=Cortex-M4")
 set (MFPU                     "-mfpu=fpv4-sp-d16")
 set (MFLOAT_ABI               "")

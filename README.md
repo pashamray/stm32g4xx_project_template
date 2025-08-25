@@ -22,18 +22,18 @@ git clone --recurse-submodules https://github.com/pashamray/stm32g4xx_project_te
 
 For debug build:
 ```shell
-cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Debug -GNinja -DCMAKE_BUILD_TYPE=Debug
+cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B build/Debug -GNinja -DCMAKE_BUILD_TYPE=Debug
 ```
 
 ```
-cmake --build Debug
+cmake --build build/Debug
 ```
 
 For release build:
 ```shell
-cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Release -GNinja -DCMAKE_BUILD_TYPE=Release
+cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B build/Release -GNinja -DCMAKE_BUILD_TYPE=Release
 ```
 
 ```shell
-cmake --build Release
+cmake --build build/Release
 ```
