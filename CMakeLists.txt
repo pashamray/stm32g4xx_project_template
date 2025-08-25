@@ -4,10 +4,10 @@
 #
 # usage: Edit "VARIABLES"-section to suit project requirements.
 #        For debug build:
-#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Debug -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Debug -GNinja -DCMAKE_BUILD_TYPE=Debug
 #          make -C Debug VERBOSE=1 -j
 #        For release build:
-#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Release -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+#          cmake -DCMAKE_TOOLCHAIN_FILE=cubeide-gcc.cmake  -S ./ -B Release -GNinja -DCMAKE_BUILD_TYPE=Release
 #          make -C Release VERBOSE=1 -j
 #############################################################################################################################
 cmake_minimum_required(VERSION 3.20)
@@ -36,11 +36,11 @@ set (MFLOAT_ABI_MIX                   "-mfloat-abi=softfp")
 #######################################################################
 
 ###################### VARIABLES ######################################
-set (PROJECT_NAME             "test2")
+set (PROJECT_NAME             "stm32g4xx_project_template")
 set (PROJECT_TYPE             "exe")
 set (LINKER_SCRIPT            "../STM32G474RETX_FLASH.ld")
 set (MCPU                     "-mcpu=Cortex-M4")
-set (MFPU                 "-mfpu=fpv4-sp-d16")
+set (MFPU                     "-mfpu=fpv4-sp-d16")
 set (MFLOAT_ABI               "")
 set (RUNTIME_LIBRARY          "--specs=nano.specs")
 set (RUNTIME_LIBRARY_SYSCALLS "--specs=nosys.specs")
@@ -48,22 +48,24 @@ set (RUNTIME_LIBRARY_SYSCALLS "--specs=nosys.specs")
 
 set (PROJECT_SOURCES
 	# LIST SOURCE FILES HERE
-	Startup/startup_stm32g474retx.s
-	Sources/main.c
-	Sources/syscalls.c
-	Sources/sysmem.c
+	startup_stm32g474retx.s
+	src/main.c
+	src/syscalls.c
+	src/sysmem.c
 
 
 	)
 
 set (PROJECT_DEFINES
 	# LIST COMPILER DEFINITIONS HERE
-
+	STM32G474xx
     )
 
 set (PROJECT_INCLUDES
 	# LIST INCLUDE DIRECTORIES HERE
-
+    Drivers/STM32CubeG4/Drivers/CMSIS/Device/ST/STM32G4xx/Include
+    Drivers/STM32CubeG4/Drivers/CMSIS/Include
+	inc/
     )
 
 ############ MODIFY ACCORDING TO REQUIREMENTS) ########################
